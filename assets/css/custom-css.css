@@ -526,10 +526,6 @@ footer {
   padding: 1rem;
 }
 
-.hamburger__container .hamburger__content>i {
-  cursor: pointer;
-}
-
 .hamburger__container .hamburger__content>ul {
   padding: 2rem 2rem;
   text-align: center;
@@ -674,7 +670,7 @@ footer {
   }
 
   .nav__main-container > ul{
-    width: 35%;
+    width: 50%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -804,6 +800,7 @@ footer {
 
 
   .next__content-container .project__container .project__card-container .project__card .project__content .project__info {
+    padding: 0 1rem;
     font-size: 1.25rem;
     font-style: oblique;
   }

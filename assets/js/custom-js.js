@@ -1,10 +1,11 @@
+const heroImage = document.querySelector('.hero__start-img > img')
+const heroTheme = document.querySelector('.hero__theme-container')
+const heroMotto = document.querySelectorAll('.hero__container .hero__info .hero__motto-container>p')
+
 const hamburgerIcon = document.querySelector('.nav__hamburger-container')
 const hamburgerWrapper = document.querySelector('.hamburger__wrapper')
 const hamburgerContent = document.querySelector('.hamburger__container')
 const hamburgerOverlay = document.querySelectorAll('.hamburger__overlay-bg')
-const heroImage = document.querySelector('.hero__start-img > img')
-const heroTheme = document.querySelector('.hero__theme-container')
-const heroMotto = document.querySelectorAll('.hero__container .hero__info .hero__motto-container>p')
 
 const closehamburgerWrapper = document.querySelector('.close-hamburger')
 
@@ -100,12 +101,12 @@ const darkThemeColor = {
 
 // Light theme colors
 const lightThemeColor = {
-    '--body-bg': '#e0e0e0', // Light gray background
-    '--component-bg': '#ffffff', // White component background
-    '--text-color': '#263238', // Dark blue-gray text color
-    '--btn-component-bg-focus': '#DA0170', // Red button background
-    '--btn-component-text-focus': '#ffffff', // White button text color
-    '--border-color': '#90a4ae', // Blue-gray border color
+    '--body-bg': '#e0e0e0',
+    '--component-bg': '#ffffff',
+    '--text-color': '#263238',
+    '--btn-component-bg-focus': '#DA0170',
+    '--btn-component-text-focus': '#ffffff',
+    '--border-color': '#90a4ae',
 
     '--first-theme-gradient': '#DA0170',
     '--second-theme-gradient': '#EE99C2',
@@ -123,7 +124,7 @@ const brownThemeColor = {
     '--component-bg': '#DAA879', // Lighter brown component background
     '--text-color': '#3d291e', // Dark brown text color
     '--btn-component-bg-focus': '#5c3d30', // Dark brown button background
-    '--btn-component-text-focus': '#fff', // White button text color
+    '--btn-component-text-focus': '#fff',
     '--border-color': '#7B5228', // Light brown border color
 
     '--first-theme-gradient': '#E86260',
@@ -138,12 +139,12 @@ const brownThemeColor = {
 };
 
 const blueThemeColor = {
-    '--body-bg': '#e0f7fa', // Light blue background
-    '--component-bg': '#ffffff', // White component background
-    '--text-color': '#37474f', // Dark blue-gray text color
-    '--btn-component-bg-focus': '#2196f3', // Blue button background
-    '--btn-component-text-focus': '#ffffff', // White button text color
-    '--border-color': '#90a4ae', // Blue-gray border color
+    '--body-bg': '#e0f7fa',
+    '--component-bg': '#ffffff',
+    '--text-color': '#37474f',
+    '--btn-component-bg-focus': '#2196f3',
+    '--btn-component-text-focus': '#ffffff',
+    '--border-color': '#90a4ae',
 
     '--first-theme-gradient': '#874CCC',
     '--second-theme-gradient': '#C65BCF',
@@ -154,10 +155,7 @@ const blueThemeColor = {
 
     '--first-overlay': '#2196F3',
     '--second-overlay': '#9400FF',
-
-
 };
-
 
 const setTheme = (selectedTheme) => {
     Object.entries(selectedTheme).forEach(key => {
@@ -181,43 +179,108 @@ blueTheme.addEventListener('click', (e) => {
     setTheme(blueThemeColor)
 })
 
+
+
+
+
+
+
 const nextSection = document.querySelector('.about__extra-info')
+
 const mainSection = document.querySelector('.main__content-container')
 const nextContent = document.querySelector('.next__content-container')
 const header = document.querySelector('.nav__main-container')
-const lol = document.querySelector('.lol')
 
-nextSection.addEventListener('click', (e) => {
-    mainSection.style.display = 'none'
-    nextContent.style.cssText = 'display:block;'
-    header.style.animation = 'opacity 2s forwards'
-    
-    changeList()
-})
 
-const mainList = document.querySelector('.hamburger__wrapper .hamburger__container .hamburger__content > ul.hamburger__list')
+let nextPage = () => {
+    nextSection.addEventListener('click', (e) => {
+
+        mainSection.style.cssText = 'display:none;'
+        nextContent.style.cssText = 'display:block;'
+        header.style.cssText = 'animation:opacity 2s forwards;'
+
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+
+        changeList()
+
+    })
+}
+nextPage()
+
+
+
+
+
+
+
+
+
+
+
+
+const hamburgerList = document.querySelector('.hamburger__wrapper .hamburger__container .hamburger__content > ul')
+const mainList = document.querySelector('.nav__main-container > ul')
 
 const changeList = () => {
-while (mainList.firstChild) {
-    mainList.removeChild(mainList.firstChild);
+    while (hamburgerList.firstChild) {
+        hamburgerList.removeChild(hamburgerList.firstChild);
+    }
+
+    while (mainList.firstChild) {
+        mainList.removeChild(mainList.firstChild);
+    }
+
+    const listName = ['Home', 'Skills', 'Stacks', 'Random', 'Contacts']
+    const listId = ['home', 'skills', 'stacks', 'random', 'contact']
+
+
+
+    for (let i = 0; i < listName.length; i++) {
+        const createList = document.createElement('li')
+        hamburgerList.appendChild(createList)
+        mainList.appendChild(createList)
+        const createAnchor = document.createElement('a')
+        if (i === 0) {
+            createAnchor.setAttribute('íd', 'home')
+            createAnchor.addEventListener('click', (e) => {
+                while (mainList.firstChild) {
+                    mainList.removeChild(mainList.firstChild);
+                }
+                mainSection.style.cssText = 'display:block;'
+                nextContent.style.cssText = 'display:none;'
+                header.style.cssText = 'animation:opacity 2s forwards;'
+                const listName = ['About', 'Projects', 'Contacts']
+                const listId = ['about', 'project', 'contact']
+
+                for(let i=0;i<listName.length;i++){
+                    const createList = document.createElement('li')
+                    mainList.appendChild(createList)
+
+                    const createAnchor = document.createElement('a')
+                    createAnchor.href = `#${listId[i]}`
+                    createAnchor.textContent = `${listName[i]}`
+                    createList.appendChild(createAnchor)
+                }
+
+               
+
+
+
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+
+            })
+
+        }
+        createAnchor.href = `#${listId[i]}`
+        createAnchor.textContent = `${listName[i]}`
+        createList.appendChild(createAnchor)
+    }
 }
 
-const listName = ['Home', 'Skills', 'Stacks', 'Random Facts', 'Contact']
-const listId = ['skills', 'skills', 'stacks', 'random', 'contact']
-
-for(let i=0;i<listName.length;i++){
-    const createList = document.createElement('li')
-    mainList.appendChild(createList)
-
-    const createAnchor = document.createElement('a')
-    createAnchor.href = `#${listId[i]}`
-    createAnchor.textContent = `${listName[i]}`
-    createList.appendChild(createAnchor)
-}
-}
-
-mainList.addEventListener('click', (e) => {
-    if(e.target.tagName === 'A'){
+hamburgerList.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
         hamburgerContent.style.cssText = `animation:hamburgerAnimationReverse 0.5s ease-in-out; animation-delay: ${0.5}s;`
 
         let setDelay = 0
@@ -227,7 +290,7 @@ mainList.addEventListener('click', (e) => {
             hamburgerOverlay[reverseCount].style.cssText = `animation:hamburgerAnimationReverse 0.5s ease-in-out; animation-delay: ${setDelay}s;`
             setDelay += 0.2
         }
-    
+
         setTimeout(() => {
             hamburgerWrapper.classList.remove('show')
             hamburgerOverlay.forEach(overlay => {
@@ -237,5 +300,4 @@ mainList.addEventListener('click', (e) => {
         }, 1000)
     }
 })
-
 
