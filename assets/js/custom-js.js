@@ -301,3 +301,14 @@ hamburgerList.addEventListener('click', (e) => {
     }
 })
 
+const warning =  document.querySelector('.project__card-container')
+
+warning.addEventListener('click', (e)=>{
+    if(e.target.classList.contains('project__live-site')){
+        Swal.fire({
+            title: "Coming Soon: Live Site Launch!",
+            text: "Wait for exciting updates!",
+            icon: "warning"
+          });
+    }
+})

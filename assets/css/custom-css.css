@@ -608,6 +608,12 @@ footer {
   color: #6D10ED;
 }
 
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+  background-color: var(--btn-component-bg-focus) !important;
+  color: var(--btn-component-text-focus) !important;
+}
+
+
 
 
 
@@ -650,6 +656,7 @@ footer {
 
   }
 }
+
 
 
 
