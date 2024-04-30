@@ -95,14 +95,15 @@ header {
 
 .nav__main-container {
   width: 90%;
-  height: 45%;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
   border: 1px solid var(--border-color);
   border-radius: 2rem;
   background-color: var(--component-bg);
+  z-index: 999;
 }
 
 
@@ -129,13 +130,17 @@ header {
   stroke-width: 2px;
 }
 
+.nav__main-container > ul {
+  display: none;
+}
+
 
 section {
   color: var(--text-color);
 }
 
 .main__content-container section:nth-of-type(2) {
-  margin: 35vh 0 0;
+  margin: 40vh 0 0;
 }
 
 .main__content-container section:nth-of-type(3) {
@@ -337,6 +342,7 @@ section {
 }
 
 .project__container .project__card-container .project__card {
+  width: 100%;
   margin: 1rem 0;
   position: relative;
   border: 1px solid var(--border-color);
@@ -467,9 +473,10 @@ footer {
 .hamburger__wrapper {
   height: 100%;
   width: 100%;
+  display: none;
   position: fixed;
   top: 0;
-  display: none;
+  z-index: 9999;
 
 }
 
@@ -657,7 +664,33 @@ footer {
   }
 }
 
-@media only screen and (min-width: 1300px) and (max-width: 1500px) {
+@media only screen and (min-width: 1300px) and (max-width: 1920px) {
+  .nav__main-container {
+    padding: 1.5rem;
+  }
+  
+  .nav__main-container .nav__hamburger-container{
+    display: none;
+  }
+
+  .nav__main-container > ul{
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nav__main-container ul > li {
+   list-style: none;
+  }
+
+  .nav__main-container ul > li > a {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: var(--text-color);
+   }
+
+
   .main__content-container {
     width: 90%;
     margin: 0 auto;
@@ -716,11 +749,11 @@ footer {
     display: flex;
   }
 
-  .project__header {
+  .project__container .project__card-container .project__card  .project__header {
     width: 50%;
   }
 
-  .project__image {
+  .project__container .project__card-container .project__card .project__header  .project__image {
     height: 100%;
     width: 100%;
   }
@@ -803,3 +836,28 @@ footer {
     margin: 0 auto;
   }
 }
+
+@media only screen and (min-width: 1920px) {
+
+  .nav__main-container{
+    width: 70%;
+  }
+
+  .main__content-container {
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+  .next__content-container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+  footer {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+}
+

@@ -195,7 +195,7 @@ nextSection.addEventListener('click', (e) => {
     changeList()
 })
 
-const mainList = document.querySelector('.hamburger__wrapper .hamburger__container .hamburger__content > ul.main-list')
+const mainList = document.querySelector('.hamburger__wrapper .hamburger__container .hamburger__content > ul.hamburger__list')
 
 const changeList = () => {
 while (mainList.firstChild) {
