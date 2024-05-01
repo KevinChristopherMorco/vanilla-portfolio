@@ -86,6 +86,8 @@ const darkThemeColor = {
     '--btn-component-bg-focus': '#fff',
     '--btn-component-text-focus': '#000',
     '--border-color': '#fff',
+    '--header-color':'rgba(0, 0, 0,0.8)',
+
 
     '--first-theme-gradient': '#007bff',
     '--second-theme-gradient': '#e83e8c',
@@ -107,6 +109,7 @@ const lightThemeColor = {
     '--btn-component-bg-focus': '#DA0170',
     '--btn-component-text-focus': '#ffffff',
     '--border-color': '#90a4ae',
+    '--header-color':'rgba(255, 255, 255,0.8)',
 
     '--first-theme-gradient': '#DA0170',
     '--second-theme-gradient': '#EE99C2',
@@ -120,12 +123,13 @@ const lightThemeColor = {
 };
 
 const brownThemeColor = {
-    '--body-bg': '#ECCA9C', // Light brown background
-    '--component-bg': '#DAA879', // Lighter brown component background
-    '--text-color': '#3d291e', // Dark brown text color
-    '--btn-component-bg-focus': '#5c3d30', // Dark brown button background
+    '--body-bg': '#ECCA9C',
+    '--component-bg': '#DAA879',
+    '--text-color': '#3d291e',
+    '--btn-component-bg-focus': '#5c3d30',
     '--btn-component-text-focus': '#fff',
-    '--border-color': '#7B5228', // Light brown border color
+    '--border-color': '#7B5228',
+    '--header-color':'rgba(236, 202, 156,0.8)',
 
     '--first-theme-gradient': '#E86260',
     '--second-theme-gradient': '#43766C',
@@ -145,6 +149,7 @@ const blueThemeColor = {
     '--btn-component-bg-focus': '#2196f3',
     '--btn-component-text-focus': '#ffffff',
     '--border-color': '#90a4ae',
+    '--header-color':'rgba(224, 247, 250,0.8)',
 
     '--first-theme-gradient': '#874CCC',
     '--second-theme-gradient': '#C65BCF',

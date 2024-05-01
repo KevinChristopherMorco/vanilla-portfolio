@@ -10,6 +10,7 @@
   --btn-component-bg-focus: #fff;
   --btn-component-text-focus: #000;
   --border-color: #fff;
+  --header-color: rgba(0, 0, 0,0.8);
 
   /* Brands */
   --linkedIn: #0077B5;
@@ -102,7 +103,7 @@ header {
   position: fixed;
   border: 1px solid var(--border-color);
   border-radius: 2rem;
-  background-color: var(--component-bg);
+  background-color: var(--header-color);
   z-index: 999;
 }
 
@@ -745,6 +746,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   }
 
   .about__container .about__content .about__extra-info>button {
+    cursor: pointer;
     font-size: 1.25rem;
   }
 
