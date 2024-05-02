@@ -417,7 +417,7 @@ section {
 }
 
 footer {
-  padding: 3rem 1rem;
+  padding: 5rem 1rem;
   color: var(--text-color);
 }
 
@@ -551,25 +551,39 @@ footer {
 }
 
 
-.random__stuffs-container .random__list>ul {
+.next__content-container  .random__stuffs-container .random__list>ul {
   list-style: square;
   list-style-position: inside;
 }
 
-.random__stuffs-container .random__list>ul>li {
+.next__content-container  .random__stuffs-container .random__list>ul>li {
   padding: 1rem 0;
   font-size: 1.25rem;
   font-weight: 400;
 }
 
-.text__stack-card {
+.next__content-container  .tech__stack-container .text__stack-card-container {
   padding: 1rem 0;
   background-color: var(--body-bg);
   display: flex;
   justify-content: space-around;
-  align-items: center;
   flex-wrap: wrap;
-  font-size: 3rem;
+}
+
+.next__content-container  .tech__stack-container .text__stack-card-container .text__stack-card{
+  padding: 1rem;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.next__content-container  .tech__stack-container .text__stack-card-container .text__stack-card > i{
+  font-size: 2rem;
+}
+
+.next__content-container  .tech__stack-container .text__stack-card-container .text__stack-card > p{
+  font-size: 1rem;
 }
 
 .fa-html5 {
@@ -653,6 +667,19 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     width: 90%;
     margin: 0 auto;
   }
+
+  .next__content-container  .tech__stack-container .text__stack-card-container .text__stack-card{
+    width: 40%;
+    justify-content: space-evenly;
+  }
+ 
+  .next__content-container  .tech__stack-container .text__stack-card-container .text__stack-card > i{
+    font-size: 3rem;
+  }
+  
+  .next__content-container  .tech__stack-container .text__stack-card-container .text__stack-card > p{
+    font-size: 1.5rem;
+  }
 }
 
 @media only screen and (min-width: 1300px) and (max-width: 1920px) {
@@ -688,7 +715,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   }
 
   .heading{
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     padding: 2rem 0;
   }
 
@@ -710,7 +737,7 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   }
 
   .hero__container .hero__info .hero__motto-container>p {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: bolder;
   }
 
@@ -810,12 +837,20 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
     font-size: 1.75rem;
   }
 
-  .next__content-container .tech__stack-container .text__stack-card {
-    margin: 3rem 0;
-    font-size: 6rem;
+  .next__content-container  .tech__stack-container .text__stack-card-container .text__stack-card{
+    width: 30%;
+    justify-content: space-evenly;
+  }
+ 
+  .next__content-container  .tech__stack-container .text__stack-card-container .text__stack-card > i{
+    font-size: 5rem;
+  }
+  
+  .next__content-container  .tech__stack-container .text__stack-card-container .text__stack-card > p{
+    font-size: 2rem;
   }
 
-  .random__stuffs-container .random__list>ul>li {
+  .next__content-container  .random__stuffs-container .random__list>ul>li {
     padding: 1rem 0;
     font-size: 1.75rem;
   }
