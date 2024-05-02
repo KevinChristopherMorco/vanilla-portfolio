@@ -175,6 +175,11 @@ section {
   }
 }
 
+.heading{
+  font-size: 1.75rem;
+  font-weight: bolder;
+}
+
 .hero__container .hero__info .hero__motto-container {
   display: flex;
   justify-content: space-around;
@@ -291,10 +296,6 @@ section {
   background-color: var(--blue-theme);
 }
 
-.about__container .about__heading>p {
-  font-size: 1.75rem;
-  font-weight: bolder;
-}
 
 .about__container .about__content .about__img-container {
   padding: 2rem 0;
@@ -349,10 +350,6 @@ section {
   border: 1px solid var(--border-color);
 }
 
-.project__container .project__heading {
-  margin: 1.5rem 0;
-  font-size: 1.75rem;
-}
 
 .project__container .project__card-container .project__card .project__header .project__image>img {
   width: 100%;
@@ -554,16 +551,6 @@ footer {
 }
 
 
-.tech__stack-container>.tech__stack-heading {
-  margin: 1.5rem 0;
-  font-size: 1.75rem;
-}
-
-.random__heading {
-  margin: 1.5rem 0;
-  font-size: 1.5rem;
-}
-
 .random__stuffs-container .random__list>ul {
   list-style: square;
   list-style-position: inside;
@@ -572,7 +559,7 @@ footer {
 .random__stuffs-container .random__list>ul>li {
   padding: 1rem 0;
   font-size: 1.25rem;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .text__stack-card {
@@ -698,6 +685,11 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
   .main__content-container {
     width: 90%;
     margin: 0 auto;
+  }
+
+  .heading{
+    font-size: 2.25rem;
+    padding: 2rem 0;
   }
 
   .hero__container {
