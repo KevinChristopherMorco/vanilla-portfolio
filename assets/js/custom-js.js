@@ -2,7 +2,7 @@
 const imageLoad = () => {
     const heroImage = document.querySelector('.hero__start-img > img')
     const heroMotto = document.querySelectorAll('.hero__container .hero__info .hero__motto-container>p')
-    
+
     const imagePath = ['pictures/hero/magnifying-glass.png', 'pictures/hero/visualize.png', 'pictures/hero/computer.png']
     const mottoClass = ['first', 'second', 'third']
 
@@ -343,3 +343,91 @@ const alertSwal = () => {
     })
 }
 alertSwal()
+
+const projectCardContainer = document.querySelector('.project__card-container')
+const projectDetails = [
+    {
+        image: 'pictures/project-card/advice-app.png',
+        title: 'Advice Generator App',
+        subtitle: 'Mini Project',
+        information: 'An app that generates random advice',
+        stack: ['fa-html5', 'fa-css3', 'fa-square-js'],
+        gitRef: 'https://github.com/KevinChristopherMorco/advice-generator-app',
+        liveSite: true
+    },
+
+    {
+        image: 'pictures/project-card/time-tracker.png',
+        title: 'Time Tracking Dashboard',
+        subtitle: 'Web Design',
+        information: 'A web template that allows users to track time.',
+        stack: ['fa-html5', 'fa-css3', 'fa-square-js'],
+        gitRef: 'https://github.com/KevinChristopherMorco/time-tracking-dashboard',
+        liveSite: true
+    },
+
+    {
+        image: 'pictures/project-card/faq-accordion.png',
+        title: 'FAQ Accordion',
+        subtitle: 'Web Design',
+        information: 'A FAQ web template',
+        stack: ['fa-html5', 'fa-css3', 'fa-square-js'],
+        gitRef: 'https://github.com/KevinChristopherMorco/FAQ-accordion',
+        liveSite: false
+    },
+]
+
+const createNewElement = (parent, tag, customClass = []) => {
+    const element = document.createElement(tag)
+    parent.appendChild(element)
+    for (let i = 0; i < customClass.length; i++) {
+        element.classList.add(customClass[i])
+    }
+    return element
+}
+
+for (let i = 0; i < projectDetails.length; i++) {
+    const createMainContainer = createNewElement(projectCardContainer, 'div', ['project__card', 'wow', 'fadeInUp'])
+
+    const createHeader = createNewElement(createMainContainer, 'div', ['project__header'])
+    const createImageContainer = createNewElement(createHeader, 'div', ['project__image'])
+    const image = createNewElement(createImageContainer, 'img')
+    image.setAttribute('src', `${projectDetails[i].image}`)
+
+    const projectContent = createNewElement(createMainContainer, 'div', ['project__content'])
+    const projectTitle = createNewElement(projectContent, 'div', ['project__title-pos'])
+
+    const title = createNewElement(projectTitle, 'p')
+    title.textContent = `${projectDetails[i].title}`
+    const subtitle = createNewElement(projectTitle, 'p')
+    subtitle.textContent = `${projectDetails[i].subtitle}`
+
+    const projectInfo = createNewElement(projectContent, 'div', ['project__info'])
+    projectInfo.textContent = `${projectDetails[i].information}`
+    const projectStack = createNewElement(projectContent, 'div', ['project__stack'])
+    const stackContainer = createNewElement(projectStack, 'ul')
+
+    for (let j = 0; j < projectDetails[i].stack.length; j++) {
+        const stackList = createNewElement(stackContainer, 'li')
+        createNewElement(stackList, 'i', ['fa-brands', `${projectDetails[i].stack[j]}`])
+    }
+
+    const projectFooter = createNewElement(projectContent, 'div', ['project__footer'])
+    if (projectDetails[i].liveSite === true) {
+        const liveSite = createNewElement(projectFooter, 'a', ['project__live-site'])
+        createNewElement(liveSite, 'i',['fa-solid', 'fa-gamepad'])
+        const liveText = createNewElement(liveSite, 'p', ['project__live-site'])
+        liveText.textContent = 'Live Site'
+
+    }
+
+    const gitSource = createNewElement(projectFooter, 'a')
+    createNewElement(gitSource, 'i',['fa-solid', 'fa-code'])
+    const gitText = createNewElement(gitSource, 'p')
+    gitText.textContent = 'Source'
+    gitSource.setAttribute('href', `${projectDetails[i].gitRef}`)
+    gitSource.setAttribute('target', '__blank')
+
+}
+
+

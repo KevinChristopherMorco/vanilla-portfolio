@@ -369,7 +369,7 @@ section {
 
 .project__container .project__card-container .project__card .project__content .project__title-pos,
 .project__container .project__content .project__info {
-  padding: 1rem 0;
+  padding: 1rem 1rem;
 }
 
 .project__stack {
@@ -559,7 +559,7 @@ footer {
 .random__stuffs-container .random__list>ul>li {
   padding: 1rem 0;
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .text__stack-card {
